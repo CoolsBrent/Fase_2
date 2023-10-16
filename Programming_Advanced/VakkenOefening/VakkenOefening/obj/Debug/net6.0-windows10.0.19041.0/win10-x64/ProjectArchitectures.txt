@@ -1,0 +1,2 @@
+C:\Users\Brent\Fase_2\Programming_Advanced\VakkenOefening\Models\Models.csproj;neutral
+C:\Users\Brent\Fase_2\Programming_Advanced\VakkenOefening\VakkenOefening\VakkenOefening.csproj;x64

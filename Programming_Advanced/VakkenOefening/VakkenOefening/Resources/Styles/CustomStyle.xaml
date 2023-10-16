@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Style x:Key="labelStyle"
+           TargetType="Label">
+        <Setter Property="HorizontalOptions"
+                Value="Center" />
+        <Setter Property="VerticalOptions"
+                Value="Center" />
+        <Setter Property="FontFamily"
+                Value="TitelFont" />
+        <Setter Property="HeightRequest"
+                Value="200" />
+        <Setter Property="Margin"
+                Value="10" />
+        <Setter Property="BackgroundColor"
+                Value="Black" />
+        <Setter Property="TextColor"
+                Value="White" />
+    </Style>
+    <Style x:Key="imageButtonStyle"
+           TargetType="ImageButton">
+        <Setter Property="MaximumHeightRequest"
+                Value="200" />
+        <Setter Property="MaximumWidthRequest"
+                Value="200" />
+        <Setter Property="Margin"
+                Value="5" />
+        <Setter Property="BackgroundColor"
+                Value="Black" />
+        <Setter Property="VerticalOptions"
+                Value="Start" />
+        <Setter Property="HorizontalOptions"
+                Value="Start" />
+    </Style>
+    <Style x:Key="imageStyle"
+           TargetType="Image">
+        <Setter Property="MaximumHeightRequest"
+                Value="200" />
+        <Setter Property="MaximumWidthRequest"
+                Value="200" />
+        <Setter Property="Margin"
+                Value="5" />
+        <Setter Property="BackgroundColor"
+                Value="Black" />
+        <Setter Property="VerticalOptions"
+                Value="Start" />
+        <Setter Property="HorizontalOptions"
+                Value="Start" />
+    </Style>
+</ResourceDictionary>

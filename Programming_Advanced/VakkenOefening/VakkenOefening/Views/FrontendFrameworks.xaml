@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VakkenOefening.Views.FrontendFrameworks"
+             Title="FrontendFrameworks">
+
+    <VerticalStackLayout>
+        <Label Style="{StaticResource MyLabelStyle}"
+               Text="FrontendFrameworks" />
+
+        <HorizontalStackLayout>
+            <Image Source="frontend_frameworks.png" />
+            <VerticalStackLayout>
+
+                <Label Style="{StaticResource MyLabelStyle}">
+                    <Label.Text>
+                        <MultiBinding StringFormat="Volledige naam: {0} {1}">
+                            <Binding Source="{x:Reference VoornaamEntry}"
+                                     Path="Text" />
+                            <Binding Source="{x:Reference NaamEntry}"
+                                     Path="Text" />
+                        </MultiBinding>
+                    </Label.Text>
+                </Label>
+
+                <Label Text="{Binding Source={x:Reference Campuslocatie}, Path=Text, StringFormat='Campuslocatie: {0}'}"
+                       Style="{StaticResource MyLabelStyle}" />
+
+                <Label Text="{Binding Source={x:Reference LokaalNummer}, Path=Text, StringFormat='Vast lokaal: {0}'}"
+                       Style="{StaticResource MyLabelStyle}"
+                       IsVisible="{Binding Source={x:Reference IsVastLokaal}, Path=IsChecked}" />
+
+                <Label Text="{Binding Source={x:Reference DatumEersteLes}, Path=Date, StringFormat='Datum eerste les: {0:dd/MM/yyyy}'}"
+                       Style="{StaticResource MyLabelStyle}" />
+
+                <Label Text="{Binding Source={x:Reference ScoreStep}, Path=Value, StringFormat='Score: {0}/20'}"
+                       Style="{StaticResource MyLabelStyle}" />
+            </VerticalStackLayout>
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <Entry x:Name="VoornaamEntry"
+                   Placeholder="Voornaam"
+                   WidthRequest="200" />
+            <Entry x:Name="NaamEntry"
+                   Placeholder="Naam"
+                   WidthRequest="500" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <Entry x:Name="Campuslocatie"
+                   Placeholder="Locatie campus"
+                   WidthRequest="700" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <Label Style="{StaticResource MyLabelStyle}"
+                   Text="Vast lokaal?" />
+            <CheckBox x:Name="IsVastLokaal" />
+            <Entry x:Name="LokaalNummer"
+                   Keyboard="Numeric"
+                   Placeholder="Lokaalnr" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <Label Style="{StaticResource MyLabelStyle}"
+                   Text="Datum eerste les:" />
+            <DatePicker x:Name="DatumEersteLes"
+                        Date="01/01/2000" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <Label Style="{StaticResource MyLabelStyle}"
+                   Text="Hoeveel denk je te scoren voor dit vak?" />
+            <Label Text="{Binding Source={x:Reference ScoreStep}, Path=Value, StringFormat='{0}/20'}"
+                   x:Name="ScoreWaarde"
+                   Style="{StaticResource MyLabelStyle}" />
+            <Stepper x:Name="ScoreStep"
+                     Minimum="0"
+                     Maximum="20"
+                     Value="10" />
+        </HorizontalStackLayout>
+
+        <HorizontalStackLayout>
+            <Button Text="Opslaan"
+                    x:Name="BtnOpslaan"
+                    Clicked="BtnOpslaan_Clicked" />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:Models;assembly=Models"
+             x:Class="VakkenOefening.Views.OverzichtVakkenFlex"
+             Title="OverzichtVakkenFlex"
+             BackgroundColor="Black">
+    <Grid>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <FlexLayout Wrap="Wrap"
+                        AlignContent="SpaceEvenly"
+                        AlignItems="Center">
+                <BindableLayout.ItemsSource>
+                    <x:Array Type="{x:Type model:Vak}">
+                        <model:Vak Id="1"
+                                   Naam="Programming Advanced"
+                                   Afbeelding="programming_advanced.png"></model:Vak>
+                        <model:Vak Id="2"
+                                   Naam="Frontend Frameworks"
+                                   Afbeelding="frontend_frameworks.png"></model:Vak>
+                        <model:Vak Id="3"
+                                   Naam="It-Professional 2"
+                                   Afbeelding="it_professional2.png"></model:Vak>
+                        <model:Vak Id="4"
+                                   Naam="Interactieve Websites"
+                                   Afbeelding="interactieve_websites.png"></model:Vak>
+                        <model:Vak Id="5"
+                                   Naam="Statische Websites"
+                                   Afbeelding="statische_websites.png"></model:Vak>
+                    </x:Array>
+                </BindableLayout.ItemsSource>
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="model:Vak">
+                        <VerticalStackLayout>
+                            <ImageButton AutomationId="{Binding Id}"
+                                         Source="{Binding Afbeelding}"
+                                         Style="{StaticResource imageButtonStyle}"
+                                         Clicked="ImageButton_Clicked"></ImageButton>
+                            <Label Text="{Binding Naam}"
+                                   Style="{StaticResource labelStyle}"></Label>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </FlexLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
